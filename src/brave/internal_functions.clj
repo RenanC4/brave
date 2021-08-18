@@ -65,3 +65,12 @@
             new-map))
         {}
         {:Renan 25 :Lorena 2})
+
+(take 2 [1 2 3 4])
+(drop 2 [1 2 3 4])
+
+(sort [3 2 1 4])
+
+(sort-by count ["1" "22" "4444" "333"])
+
+(concat [1 2] [3 4])
