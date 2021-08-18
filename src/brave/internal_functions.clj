@@ -74,3 +74,19 @@
 (sort-by count ["1" "22" "4444" "333"])
 
 (concat [1 2] [3 4])
+
+(def mapper-boladao
+  {:first-name "Renan"
+   :middle-name "Campos"
+   :last-name "Ribeiro"
+   :age nil
+   :year-of-birth 1996
+   :parens {:mom "Sirlene"}})
+
+(assoc mapper-boladao :first-name "Naner"
+                      :middle-name :Campos
+                      :age (- 2021 (mapper-boladao :year-of-birth)))
+
+(dissoc mapper-boladao :first-name)
+
+(get-in mapper-boladao [:parens])
