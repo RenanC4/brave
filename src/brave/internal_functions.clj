@@ -90,3 +90,13 @@
 (dissoc mapper-boladao :first-name)
 
 (get-in mapper-boladao [:parens])
+
+(concat (take 8 (repeat "na")) ["Batman!"])
+
+(take 3 (repeatedly (fn [] (rand-int 10))))
+
+(defn even-numbers
+  ([] (even-numbers 0))
+  ([n] (cons n (lazy-seq (even-numbers (+ n 2))))))
+
+(take 10 (even-numbers))
