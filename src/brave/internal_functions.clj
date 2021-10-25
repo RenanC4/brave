@@ -157,3 +157,91 @@
   (partial conj ["water" "earth" "air"]))
 
 (add-missing-elements "fire")
+
+(defn my-partial
+  [partialized-fn & args]
+  (fn [& more-args]
+    (apply partialized-fn (into args more-args))))
+
+(def add20 (my-partial + 20))
+
+(add20 20)
+
+(defn lousy-logger
+  [log-level message]
+  (condp = log-level
+    :warn (clojure.string/lower-case message)
+    :emergency (clojure.string/upper-case message)))
+
+(def warn (partial lousy-logger :warn))
+
+(def emergency (partial lousy-logger :emergency))
+
+(emergency "deu Ruim")
+(warn "CuidadO ai broder")
+
+(defn my-complement
+  [fun]
+  (fn [& args]
+    (not (apply fun args))))
+
+(def my-pos? (complement neg?))
+
+(my-pos? 2)
+(my-pos? -2)
+
+
+(defn switch-case-test
+  [status]
+  (case status
+    "batata"
+    {:ue 1}
+
+    "batata2"
+    {:ue 2}
+
+    {:ue 4}))
+
+(switch-case-test "batata22")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+response.data?.viewer?.productFeatures?.mutualFunds?.checks
+?.hasValidCompleteLocalCustomer;
+
+
+
+
+
