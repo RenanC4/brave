@@ -93,3 +93,31 @@ great-baby-name
 (level-up-3 character :dexterity)
 
 
+(fn [c] (:strenght (:attributes c)))
+
+(defn spells-slots
+  [char]
+  (int (inc (/ (c-int char) 2))))
+
+(spells-slots character)
+(c-int character)
+
+(def spells-slot-comp (comp int inc #(/ % 2) c-int))
+
+(spells-slot-comp character)
+
+;;memoization
+
+(defn sleepy-identity
+  "Returns the ginven value after 1 second"
+  [x]
+  (Thread/sleep 3000)
+  x)
+
+(sleepy-identity "hmm")
+
+(def memo-sleepy-identity (memoize sleepy-identity))
+
+(memo-sleepy-identity "batata")
+
+(memo-sleepy-identity "batata")
